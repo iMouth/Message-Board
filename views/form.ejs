@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= title %></title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h1>Enter a new message:</h1>
+    <form action="/new" method="post">
+      <label for="author">Author</label>
+      <input type="text" name="author" id="author" />
+      <label for="message">Message:</label>
+      <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter a message..."></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
