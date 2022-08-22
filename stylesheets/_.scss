@@ -1,0 +1,19 @@
+@mixin button($color: gray) {
+  background-color: $color;
+  border: none;
+  padding: 8px;
+  border-radius: 0.2rem;
+  min-width: 10.5rem;
+}
+
+%page-setup {
+  width: 100%;
+  font: 1rem monospace;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  padding-bottom: 2rem;
+}

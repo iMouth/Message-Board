@@ -1,0 +1,12 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(58, 58, 58);
+  margin: 0;
+  font-family: monospace;
+  overflow-x: hidden;
+}
+
+@import "_.scss";
+@import "index.scss";
+@import "form.scss";

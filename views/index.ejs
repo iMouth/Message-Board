@@ -2,18 +2,24 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <%- include _links.ejs %>
   </head>
   <body>
-    <div class="messages">
-      <% messages.forEach((message) => { %>
-      <ul>
-        <li>Text: <%= message.text %></li>
-        <li>User: <%= message.user %></li>
-        <li>Added <%= message.added %></li>
-      </ul>
-      <% }) %>
+    <div class="index">
+      <header>
+        <h1>Mini Messageboard</h1>
+        <p>Welcome to mini message board!</p>
+        <a href="/new"><button type="button">Add New Message!</button></a>
+      </header>
+      <div class="messages">
+        <% messages.forEach((message) => { %>
+        <div>
+          <p><%= message.text %></p>
+          <p>by <%= message.user %></p>
+          <p><%= message.added %></p>
+        </div>
+        <% }) %>
+      </div>
     </div>
-    <a href="/new"><button type="button">Add New Message</button></a>
   </body>
 </html>

@@ -1,11 +1,8 @@
 var express = require("express");
-const { title } = require("process");
 var router = express.Router();
-const messages = require("../public/javascripts/messages");
+const controller = require("../controllers/indexController.js");
+const { messages } = require("../modules/messages");
 
-/* GET home page. */
-router.get("/", (req, res, next) => {
-  res.render("index", { title: "Message Board", messages });
-});
+router.get("/", controller);
 
 module.exports = router;

@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon -e js,scss,css ./bin/www & npm run scss",
+    "scss": "sass --no-source-map --watch stylesheets/main.scss public/stylesheets/style.css"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -16,5 +17,10 @@
   },
   "engines": {
     "node": "16.14.0"
+  },
+  "devDependencies": {
+    "connect-livereload": "^0.6.1",
+    "livereload": "^0.9.3",
+    "nodemon": "^2.0.19"
   }
 }

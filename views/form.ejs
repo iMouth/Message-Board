@@ -5,15 +5,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include _links.ejs %>
   </head>
   <body>
-    <h1>Enter a new message:</h1>
-    <form action="/new" method="post">
-      <label for="author">Author</label>
-      <input type="text" name="author" id="author" />
-      <label for="message">Message:</label>
-      <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter a message..."></textarea>
-      <button type="submit">Submit</button>
-    </form>
+    <div class="form">
+      <h1>Create A New Message</h1>
+      <form action="/new" method="post">
+        <div>
+          <label for="name">Name:</label>
+          <input
+            maxlength="50"
+            required
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter your name..."
+            autocomplete="off"
+            autofocus
+          />
+        </div>
+        <div>
+          <label for="text">Message:</label>
+          <textarea
+            maxlength="1000"
+            required
+            name="text"
+            id="text"
+            cols="40"
+            rows="20"
+            placeholder="Enter a message..."
+          ></textarea>
+        </div>
+        <div>
+          <a href="/">
+            <button type="button">Go Back</button>
+          </a>
+          <button type="submit">Submit Message</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
