@@ -8,18 +8,6 @@ const formRouter = require("./routes/new");
 
 const app = express();
 
-// reload ---------------------------------
-// var livereload = require("livereload");
-// var connectLiveReload = require("connect-livereload");
-// const liveReloadServer = livereload.createServer();
-// liveReloadServer.server.once("connection", () => {
-//   setTimeout(() => {
-//     liveReloadServer.refresh("/");
-//   }, 100);
-// });
-// app.use(connectLiveReload());
-// reload ---------------------------------
-
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
