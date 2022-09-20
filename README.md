@@ -1,3 +1,2 @@
-# Message-Board
+# Members-Only
 
-[View project here](https://shielded-shelf-27384.herokuapp.com/)
