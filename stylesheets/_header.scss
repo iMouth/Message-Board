@@ -1,0 +1,57 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  font: 1rem monospace;
+
+  .header-left {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    img {
+      margin: auto;
+      width: auto;
+      height: 50px;
+    }
+  }
+
+  .header-right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    caret-color: transparent;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    p:hover {
+      cursor: pointer;
+      color: burlywood;
+    }
+  }
+
+  button {
+    @include button(burlywood);
+  }
+
+  @media screen and (max-width: 500px) {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    button {
+      font-size: 1rem;
+    }
+  }
+}

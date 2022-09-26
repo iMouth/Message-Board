@@ -23,21 +23,6 @@ const userSchema = new Schema({
   },
 });
 
-const messageSchema = new Schema({
-  user: {
-    type: String,
-    required: true,
-  },
-  text: {
-    type: String,
-    required: true,
-  },
-  added: {
-    type: String,
-    required: true,
-  },
-});
+const User = mongoose.model("User", userSchema);
 
-const Message = mongoose.model("Message", messageSchema);
-
-module.exports = Message;
+module.exports = User;

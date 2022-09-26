@@ -1,0 +1,78 @@
+$form-bg: #f8f4e5;
+$form-shadow: #ffa580;
+$form-primary-highlight: #95a4ff;
+$form-secondary-highlight: #ffc8ff;
+$font-size: 14pt;
+$font-face: "Fjalla One";
+$font-color: #2a293e;
+
+#log-in,
+#sign-up {
+  background-size: cover;
+  width: 100vw;
+  height: 90vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  .form-container {
+    background: $form-bg;
+    padding: 50px 100px;
+    border: 2px solid rgba(0, 0, 0, 1);
+    box-shadow: 15px 15px 1px $form-shadow, 15px 15px 1px 2px rgba(0, 0, 0, 1);
+
+    input {
+      display: block;
+      width: 100%;
+      font-size: $font-size;
+      line-height: $font-size * 2;
+      font-family: $font-face;
+      margin-bottom: $font-size * 2;
+      border: none;
+      border-bottom: 5px solid rgba(0, 0, 0, 1);
+      background: $form-bg;
+      min-width: 250px;
+      padding-left: 5px;
+      outline: none;
+      color: rgba(0, 0, 0, 1);
+
+      input: {
+        border-bottom: 5px solid $form-shadow;
+      }
+
+      ::selection {
+        background: $form-secondary-highlight;
+      }
+    }
+
+    .characters-container {
+      .character {
+        background-color: black;
+        border-radius: 50%;
+        justify-content: center;
+        img {
+          height: 100px;
+          width: 100px;
+        }
+      }
+    }
+    button {
+      display: block;
+      margin: 0 auto;
+      line-height: $font-size * 2;
+      padding: 0 20px;
+      background: $form-shadow;
+      letter-spacing: 2px;
+      transition: 0.2s all ease-in-out;
+      outline: none;
+      border: 1px solid rgba(0, 0, 0, 1);
+      box-shadow: 3px 3px 1px 1px $form-primary-highlight, 3px 3px 1px 2px rgba(0, 0, 0, 1);
+
+      &:hover {
+        background: rgba(0, 0, 0, 1);
+        color: white;
+        border: 1px solid rgba(0, 0, 0, 1);
+      }
+    }
+  }
+}

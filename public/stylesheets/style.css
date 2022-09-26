@@ -18,7 +18,42 @@ body {
   padding-bottom: 2rem;
 }
 
-.index header button {
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  font: 1rem monospace;
+}
+header .header-left {
+  display: flex;
+  gap: 1.5rem;
+}
+header .header-left a {
+  text-decoration: none;
+  color: white;
+}
+header .header-left img {
+  margin: auto;
+  width: auto;
+  height: 50px;
+}
+header .header-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  caret-color: transparent;
+}
+header .header-right a {
+  text-decoration: none;
+  color: white;
+}
+header .header-right p:hover {
+  cursor: pointer;
+  color: burlywood;
+}
+header button {
   background-color: burlywood;
   border: none;
   padding: 8px;
@@ -26,16 +61,17 @@ body {
   min-width: 10.5rem;
 }
 @media screen and (max-width: 500px) {
-  .index header h1 {
+  header h1 {
     font-size: 2rem;
   }
-  .index header p {
+  header p {
     font-size: 1.2rem;
   }
-  .index header button {
+  header button {
     font-size: 1rem;
   }
 }
+
 .index .messages {
   display: flex;
   flex-direction: column;
@@ -94,4 +130,72 @@ body {
   padding: 8px;
   border-radius: 0.2rem;
   min-width: 10.5rem;
+}
+
+#log-in,
+#sign-up {
+  background-size: cover;
+  width: 100vw;
+  height: 90vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+#log-in .form-container,
+#sign-up .form-container {
+  background: #f8f4e5;
+  padding: 50px 100px;
+  border: 2px solid rgb(0, 0, 0);
+  box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px rgb(0, 0, 0);
+}
+#log-in .form-container input,
+#sign-up .form-container input {
+  display: block;
+  width: 100%;
+  font-size: 14pt;
+  line-height: 28pt;
+  font-family: "Fjalla One";
+  margin-bottom: 28pt;
+  border: none;
+  border-bottom: 5px solid rgb(0, 0, 0);
+  background: #f8f4e5;
+  min-width: 250px;
+  padding-left: 5px;
+  outline: none;
+  color: rgb(0, 0, 0);
+  input-border-bottom: 5px solid #ffa580;
+}
+#log-in .form-container input ::selection,
+#sign-up .form-container input ::selection {
+  background: #ffc8ff;
+}
+#log-in .form-container .characters-container .character,
+#sign-up .form-container .characters-container .character {
+  background-color: black;
+  border-radius: 50%;
+  justify-content: center;
+}
+#log-in .form-container .characters-container .character img,
+#sign-up .form-container .characters-container .character img {
+  height: 100px;
+  width: 100px;
+}
+#log-in .form-container button,
+#sign-up .form-container button {
+  display: block;
+  margin: 0 auto;
+  line-height: 28pt;
+  padding: 0 20px;
+  background: #ffa580;
+  letter-spacing: 2px;
+  transition: 0.2s all ease-in-out;
+  outline: none;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px rgb(0, 0, 0);
+}
+#log-in .form-container button:hover,
+#sign-up .form-container button:hover {
+  background: rgb(0, 0, 0);
+  color: white;
+  border: 1px solid rgb(0, 0, 0);
 }

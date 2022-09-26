@@ -9,7 +9,7 @@ const connectDB = require("./mongo");
 require("dotenv").config();
 const app = express();
 
-connectDB();
+//connectDB();
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -38,5 +38,8 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.render("error");
 });
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log("Listening on " + port));
 
 module.exports = app;

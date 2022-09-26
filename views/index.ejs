@@ -7,11 +7,8 @@
   </head>
   <body>
     <div class="index">
-      <header>
-        <h1>Mini Messageboard</h1>
-        <p>Welcome to mini message board!</p>
-        <a href="/new"><button type="button">Add New Message!</button></a>
-      </header>
+      <%- include _header.ejs %>
+      <!-- <a href="/new"><button type="button">Add New Message!</button></a> -->
       <div class="messages">
         <% messages.forEach((message) => { %>
         <div>
