@@ -23,9 +23,9 @@ const userSchema = new Schema({
     required: true,
   },
   avatar: {
-    ttpe: String,
-    required: true;
-  }
+    type: String,
+    required: true,
+  },
 });
 
 const User = mongoose.model("User", userSchema);

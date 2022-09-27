@@ -15,11 +15,7 @@ const start = () => {
   client.connect((err) => {
     if (!err) {
       const collection = client.db("Members-Only").collection("users");
-      collection
-        .find()
-        .sort({ _id: -1 })
-        .forEach((message) => messages.push(message))
-        .catch(() => createError(500));
+   
     } else createError(500);
   });
   client.close();

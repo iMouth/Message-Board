@@ -9,7 +9,7 @@ const connectDB = require("./mongo");
 require("dotenv").config();
 const app = express();
 
-//connectDB();
+connectDB();
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
