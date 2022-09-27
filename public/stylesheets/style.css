@@ -136,66 +136,99 @@ header button {
 #sign-up {
   background-size: cover;
   width: 100vw;
-  height: 90vh;
   display: grid;
   align-items: center;
   justify-items: center;
 }
 #log-in .form-container,
 #sign-up .form-container {
-  background: #f8f4e5;
-  padding: 50px 100px;
-  border: 2px solid rgb(0, 0, 0);
-  box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px rgb(0, 0, 0);
+  margin-top: 2rem;
+  background-color: burlywood;
+  padding: 25px 75px 50px 75px;
+  border: 2px solid black;
+  gap: 1rem;
+  border-radius: 2rem;
+}
+#log-in .form-container h1,
+#sign-up .form-container h1 {
+  display: flex;
+  justify-content: center;
+}
+#log-in .form-container img,
+#sign-up .form-container img {
+  width: auto;
+  height: 350px;
+  border-radius: 2rem;
+  margin: 0 0 1rem 0;
+}
+#log-in .form-container label,
+#sign-up .form-container label {
+  font-family: "monospace";
+  padding-left: 10px;
 }
 #log-in .form-container input,
 #sign-up .form-container input {
   display: block;
-  width: 100%;
-  font-size: 14pt;
-  line-height: 28pt;
-  font-family: "Fjalla One";
-  margin-bottom: 28pt;
+  width: calc(100% - 10px);
+  font-size: 1rem;
+  line-height: 2rem;
+  font-family: "monospace";
   border: none;
-  border-bottom: 5px solid rgb(0, 0, 0);
   background: #f8f4e5;
-  min-width: 250px;
-  padding-left: 5px;
+  padding-left: 10px;
   outline: none;
-  color: rgb(0, 0, 0);
-  input-border-bottom: 5px solid #ffa580;
+  margin: 2px 0 1rem 0;
+  border-radius: 2rem;
+  min-width: 250px;
 }
-#log-in .form-container input ::selection,
-#sign-up .form-container input ::selection {
-  background: #ffc8ff;
+#log-in .form-container .form-group > p,
+#sign-up .form-container .form-group > p {
+  font-size: 1rem;
+  font-family: "monospace";
+  margin: 0;
+  padding-bottom: 2px;
+  padding-left: 10px;
 }
-#log-in .form-container .characters-container .character,
-#sign-up .form-container .characters-container .character {
-  background-color: black;
-  border-radius: 50%;
-  justify-content: center;
+#log-in .form-container .characters-container,
+#sign-up .form-container .characters-container {
+  display: flex;
+  gap: 1rem;
+  background-color: #f8f4e5;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  width: calc(100% - 10px);
 }
-#log-in .form-container .characters-container .character img,
-#sign-up .form-container .characters-container .character img {
+#log-in .form-container .characters-container .character input,
+#sign-up .form-container .characters-container .character input {
+  position: absolute;
+  left: -9999px;
+}
+#log-in .form-container .characters-container .character label > img,
+#sign-up .form-container .characters-container .character label > img {
+  border-radius: 10rem;
   height: 100px;
   width: 100px;
+  border: 5px solid transparent;
+  cursor: pointer;
+}
+#log-in .form-container .characters-container .character input:checked + label > img,
+#sign-up .form-container .characters-container .character input:checked + label > img {
+  border: 5px solid #ffa580;
 }
 #log-in .form-container button,
 #sign-up .form-container button {
-  display: block;
-  margin: 0 auto;
-  line-height: 28pt;
-  padding: 0 20px;
-  background: #ffa580;
-  letter-spacing: 2px;
-  transition: 0.2s all ease-in-out;
+  background-color: #f8f4e5;
   outline: none;
-  border: 1px solid rgb(0, 0, 0);
-  box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px rgb(0, 0, 0);
+  border: none;
+  padding: 1rem;
+  margin: 1rem 0 0 0;
+  cursor: pointer;
+  border-radius: 2rem;
+  width: 100%;
+  font-size: 1rem;
+  font-family: "monospace";
 }
 #log-in .form-container button:hover,
 #sign-up .form-container button:hover {
-  background: rgb(0, 0, 0);
-  color: white;
-  border: 1px solid rgb(0, 0, 0);
+  background-color: #ffa580;
 }

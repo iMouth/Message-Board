@@ -1,0 +1,33 @@
+.form {
+  @extend %page-setup;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 1em;
+
+    div:not(:last-child) {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      label {
+        text-align: left;
+      }
+
+      textarea {
+        resize: none;
+      }
+    }
+
+    div:last-child {
+      a > button {
+        @include button(rgb(250, 75, 75));
+      }
+      > button {
+        @include button(rgb(75, 250, 75));
+      }
+    }
+  }
+}

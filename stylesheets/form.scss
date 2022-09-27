@@ -1,32 +1,106 @@
-.form {
-  @extend %page-setup;
+$form-bg: #f8f4e5;
+$form-bg-secondary: #ffa580;
+$font-size: 1rem;
+$font-face: "monospace";
 
-  form {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    gap: 1em;
+#log-in,
+#sign-up {
+  background-size: cover;
+  width: 100vw;
 
-    div:not(:last-child) {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  .form-container {
+    margin-top: 2rem;
+    background-color: burlywood;
+    padding: 25px 75px 50px 75px;
+    border: 2px solid black;
+    gap: 1rem;
+    border-radius: 2rem;
+
+    h1 {
       display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+      justify-content: center;
+    }
 
-      label {
-        text-align: left;
-      }
+    img {
+      width: auto;
+      height: 350px;
+      border-radius: 2rem;
+      margin: 0 0 1rem 0;
+    }
 
-      textarea {
-        resize: none;
+    label {
+      font-family: $font-face;
+      padding-left: 10px;
+    }
+    input {
+      display: block;
+      width: calc(100% - 10px);
+      font-size: $font-size;
+      line-height: $font-size * 2;
+      font-family: $font-face;
+      border: none;
+      background: $form-bg;
+      padding-left: 10px;
+      outline: none;
+      margin: 2px 0 1rem 0;
+      border-radius: 2rem;
+      min-width: 250px;
+    }
+
+    .form-group > p {
+      font-size: $font-size;
+      font-family: $font-face;
+      margin: 0;
+      padding-bottom: 2px;
+      padding-left: 10px;
+    }
+
+    .characters-container {
+      display: flex;
+      gap: 1rem;
+      background-color: $form-bg;
+      border-radius: 2rem;
+      padding: 0.5rem;
+      width: calc(100% - 10px);
+
+      .character {
+        input {
+          position: absolute;
+          left: -9999px;
+        }
+
+        label > img {
+          border-radius: 10rem;
+          height: 100px;
+          width: 100px;
+          border: 5px solid transparent;
+          cursor: pointer;
+        }
+
+        input:checked + label > img {
+          border: 5px solid $form-bg-secondary;
+        }
       }
     }
 
-    div:last-child {
-      a > button {
-        @include button(rgb(250, 75, 75));
-      }
-      > button {
-        @include button(rgb(75, 250, 75));
+    button {
+      background-color: $form-bg;
+      outline: none;
+      border: none;
+      padding: 1rem;
+      margin: 1rem 0 0 0;
+      cursor: pointer;
+      border-radius: 2rem;
+      width: 100%;
+      font-size: $font-size;
+      font-family: $font-face;
+
+      &:hover {
+        background-color: $form-bg-secondary;
       }
     }
   }
