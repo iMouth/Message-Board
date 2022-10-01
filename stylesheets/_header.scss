@@ -22,20 +22,30 @@ header {
     }
   }
 
+  .name {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+
   .header-right {
     display: flex;
-    gap: 1rem;
     align-items: center;
     caret-color: transparent;
 
     a {
+      padding: 0 1rem;
       text-decoration: none;
       color: white;
     }
 
-    p:hover {
+    a:hover {
       cursor: pointer;
       color: burlywood;
+    }
+
+    button:hover {
+      cursor: pointer;
     }
   }
 

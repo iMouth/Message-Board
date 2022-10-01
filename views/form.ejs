@@ -13,16 +13,15 @@
       <form action="/new" method="post">
         <div>
           <label for="name">Name:</label>
-          <input
-            maxlength="50"
-            required
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Enter your name..."
-            autocomplete="off"
-            autofocus
-          />
+          <input maxlength="50" 
+                 required 
+                 type="text" 
+                 name="name" 
+                 id="name" 
+                 readonly 
+                 autocomplete="off"
+                 value="<%= user.firstName %> <%= user.lastName %>"
+           />
         </div>
         <div>
           <label for="text">Message:</label>
@@ -34,6 +33,7 @@
             cols="40"
             rows="20"
             placeholder="Enter a message..."
+            autofocus
           ></textarea>
         </div>
         <div>

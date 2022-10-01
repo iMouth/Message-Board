@@ -3,8 +3,23 @@
     <a href="/"> <h1>Kelvin's Klub</h1> </a>
     <img src="images/club-icon.png" alt="caveman club icon" />
   </div>
+  <% if (user) { %>
+  <div class="name">
+    <p><%= user.firstName + " " + user.lastName %></p>
+  </div>
+  <% } %>
   <div class="header-right">
-    <a href="/sign-up"> <p>Sign Up</p> </a>
-    <a href="/log-in"> <p>Log In</p> </a>
+    <% if (user) { %>
+    <div class="header-btns">
+      <a href="/new"><button type="button">Create Message</button></a>
+      <a href="/member">Member</a>
+      <a href="/admin">Admin</a>
+      <a href="/log-out">Log Out</a>
+    </div>
+
+    <% } else { %>
+    <a href="/sign-up">Sign Up</a>
+    <a href="/log-in">Log In</a>
+    <% } %>
   </div>
 </header>

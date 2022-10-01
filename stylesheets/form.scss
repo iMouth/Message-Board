@@ -4,7 +4,9 @@ $font-size: 1rem;
 $font-face: "monospace";
 
 #log-in,
-#sign-up {
+#sign-up,
+#member,
+#admin {
   background-size: cover;
   width: 100vw;
 
@@ -36,6 +38,7 @@ $font-face: "monospace";
       font-family: $font-face;
       padding-left: 10px;
     }
+    
     input {
       display: block;
       width: calc(100% - 10px);

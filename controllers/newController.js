@@ -2,7 +2,7 @@ const { messages, makeDate } = require("../modules/messages");
 const Message = require("../models/message");
 
 const new_create_get = (req, res) => {
-  res.render("form", { title: "New Message" });
+  res.render("form", { title: "New Message", user: res.locals.currentUser });
 };
 
 const new_create_post = (req, res) => {
@@ -11,9 +11,9 @@ const new_create_post = (req, res) => {
   const message = new Message({
     user: info.name,
     text: info.text,
+    avatar: res.locals.currentUser.avatar,
     added: makeDate(),
   });
-  messages.unshift(message);
   message
     .save()
     .then((result) => res.redirect("/"))

@@ -2,19 +2,31 @@
 <html>
   <head>
     <title><%= title %></title>
-
     <%- include _links.ejs %>
   </head>
   <body>
     <div class="index">
-      <%- include _header.ejs %>
-      <!-- <a href="/new"><button type="button">Add New Message!</button></a> -->
+      <%- include('_header', {user}) %>
       <div class="messages">
         <% messages.forEach((message) => { %>
-        <div>
-          <p><%= message.text %></p>
-          <p>by <%= message.user %></p>
-          <p><%= message.added %></p>
+        <div class="messages-container">
+          <div class="message-img">
+            <!-- img from the images folder for message.user.avatar-->
+            <img src="images/<%= message.avatar %>" alt="" />
+          </div>
+          <% if (user && user.member) { %>
+          <div class="message-info">
+            <p><%= message.text %></p>
+            <p>by <%= message.user %></p>
+            <p><%= message.added %></p>
+          </div>
+          <% } else { %>
+          <div class="message-info">
+            <p>Hidden Message! Become a Member or Log in. <br> Membership Password: Put Password</p>
+            <p>by Unknown</p>
+            <p><%= message.added %></p>
+          </div>
+          <% } %>
         </div>
         <% }) %>
       </div>

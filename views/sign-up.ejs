@@ -8,7 +8,7 @@
     <%- include _links.ejs %>
   </head>
   <body>
-    <%- include _header.ejs %>
+      <%- include('_header', {user}) %>
     <div id="sign-up">
       <div class="form-container">
         <h1><%= title %></h1>
@@ -37,31 +37,31 @@
             <p>Choose an Avatar</p>
             <div class="characters-container">
               <div class="character">
-                <input type="radio" name="character" id="number1" value="number1" required />
+                <input type="radio" name="character" id="number1" value="number-1.jpeg" required checked/>
                 <label for="number1">
                   <img src="images/number-1.jpeg" alt="Numbuh 1" />
                 </label>
               </div>
               <div class="character">
-                <input type="radio" name="character" id="number2" value="number2" />
+                <input type="radio" name="character" id="number2" value="number-2.jpeg" />
                 <label for="number2">
                   <img src="images/number-2.jpeg" alt="Numbuh 2" />
                 </label>
               </div>
               <div class="character">
-                <input type="radio" name="character" id="number3" value="number3" />
+                <input type="radio" name="character" id="number3" value="number-3.jpeg" />
                 <label for="number3">
                   <img src="images/number-3.jpeg" alt="Numbuh 3" />
                 </label>
               </div>
               <div class="character">
-                <input type="radio" name="character" id="number4" value="number4" />
+                <input type="radio" name="character" id="number4" value="number-4.jpeg" />
                 <label for="number4">
                   <img src="images/number-4.jpeg" alt="Numbuh 4" />
                 </label>
               </div>
               <div class="character">
-                <input type="radio" name="character" id="number5" value="number5" />
+                <input type="radio" name="character" id="number5" value="number-5.jpeg" />
                 <label for="number5">
                   <img src="images/number-5.jpeg" alt="Numbuh 5" />
                 </label>

@@ -11,6 +11,10 @@ const formRouter = require("./routes/new");
 const start = require("./mongo");
 require("dotenv").config();
 const app = express();
+const User = require("./models/user");
+const bcrypt = require("bcryptjs");
+const permsRouter = require("./routes/perms");
+const authRouter = require("./routes/auth");
 
 start();
 
@@ -24,26 +28,20 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 passport.use(
-  new LocalStrategy((email, password, done) => {
-    console.log("GOT TO LOCAL STRATEGY");
+  new LocalStrategy({ usernameField: "email" }, (email, password, done) => {
     User.findOne({ email: email }, (err, user) => {
       if (err) {
-        console.log("ERROR ON FIND ONE");
         return done(err);
       }
       if (!user) {
-        console.log("NO USER");
         return done(null, false, { message: "Incorrect Username" });
       }
       bcrypt.compare(password, user.password, (err, res) => {
         if (err) {
-          console.log("ERROR ON COMPARE");
           return done(err);
         } else if (res) {
-          console.log("SUCCESS");
           return done(null, user);
         } else {
-          console.log("WRONG PASSWORD");
           return done(null, false, { message: "Incorrect password" });
         }
       });
@@ -54,7 +52,7 @@ passport.use(
 passport.serializeUser((user, done) => done(null, user.id));
 passport.deserializeUser((id, done) => User.findById(id, (err, user) => done(err, user)));
 
-app.use(session({ secret: process.env.SECRET_SESSION, resave: false, saveUninitialized: true }));
+app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.urlencoded({ extended: false }));
@@ -67,6 +65,8 @@ app.use((req, res, next) => {
 
 app.use("/", indexRouter);
 app.use("/", formRouter);
+app.use("/", permsRouter);
+app.use("/", authRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

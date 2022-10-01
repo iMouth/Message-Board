@@ -8,22 +8,18 @@
     <%- include _links.ejs %>
   </head>
   <body>
-    <%- include('_header', user) %>
-    <div id="log-in">
+    <%- include('_header', {user}) %>
+    <div id="member">
       <div class="form-container">
         <h1><%= title %></h1>
         <img src="images/treehouse.jpeg" alt="" />
-        <form action="/log-in" method="post">
+        <form action="/member" method="post">
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required />
+            <label for="password">Enter Member Password</label>
+            <input type="text" name="password" id="password" required />
           </div>
           <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" requried />
-          </div>
-          <div class="form-group">
-            <button type="submit">Log In</button>
+            <button type="submit">Submit</button>
           </div>
         </form>
       </div>
