@@ -14,9 +14,13 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  status: {
-    type: String,
-    requiredq: true,
+  member: {
+    type: Boolean,
+    required: true,
+  },
+  admin: {
+    type: Boolean,
+    required: true,
   },
   password: {
     type: String,
@@ -28,6 +32,6 @@ const userSchema = new Schema({
   },
 });
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("Users", userSchema);
 
 module.exports = User;
