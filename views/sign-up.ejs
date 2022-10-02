@@ -73,9 +73,11 @@
           </div>
         </form>
         <div class="errors">
-          <%if(errors.length > 0){%> <%errors.forEach(error => {%>
-          <p id="err-msg-signup">- <%=error.msg%></p>
-          <%})%> <% }%>
+          <%if (errors.length > 0) {%> 
+            <%errors.forEach(error => {%>
+          <p id="err-msg-signup"> -<%=error.msg%></p>
+            <%})%> 
+          <% }%>
         </div>
       </div>
     </div>

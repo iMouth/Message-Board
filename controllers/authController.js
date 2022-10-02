@@ -33,11 +33,11 @@ const sign_up_post = [
   async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.render("sign-up", { title: "Sign Up", errors: errors.array() });
+      return res.render("sign-up", { title: "Sign Up", user: null, errors: errors.array() });
     }
     await User.findOne({ email: req.body.email }).then((user) => {
       if (user) {
-        return res.render("sign-up", { title: "Sign Up", errors: [{ msg: "Email already in use" }] });
+        return res.render("sign-up", { title: "Sign Up", user: null, errors: [{ msg: "Email already in use" }] });
       }
     });
 

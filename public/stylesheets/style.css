@@ -29,25 +29,46 @@ header {
 header .header-left {
   display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 header .header-left a {
   text-decoration: none;
   color: white;
 }
+header .header-left h1 {
+  font-size: 1.5rem;
+}
 header .header-left img {
   margin: auto;
   width: auto;
-  height: 50px;
+  height: 40px;
+}
+@media screen and (max-width: 1100px) {
+  header .header-left {
+    display: none;
+  }
 }
 header .name {
   display: flex;
   align-items: center;
   font-size: 1.5rem;
 }
+header .name p {
+  margin: 1rem 0;
+}
 header .header-right {
   display: flex;
   align-items: center;
   caret-color: transparent;
+}
+header .header-right .header-btns {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 550px) {
+  header .header-right .header-btns {
+    flex-direction: column;
+  }
 }
 header .header-right a {
   padding: 0 1rem;
@@ -61,23 +82,34 @@ header .header-right a:hover {
 header .header-right button:hover {
   cursor: pointer;
 }
+header .header-right .header-btns > div {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  header .header-right .header-btns > div {
+    flex-direction: column;
+    margin: 0.5rem 0;
+  }
+}
+@media screen and (max-width: 550px) {
+  header .header-right .header-btns > div {
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 550px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 header button {
   background-color: burlywood;
   border: none;
   padding: 8px;
   border-radius: 0.2rem;
   min-width: 10.5rem;
-}
-@media screen and (max-width: 500px) {
-  header h1 {
-    font-size: 2rem;
-  }
-  header p {
-    font-size: 1.2rem;
-  }
-  header button {
-    font-size: 1rem;
-  }
 }
 
 .index .messages {
@@ -106,6 +138,11 @@ header button {
   height: auto;
   border-radius: 1rem;
 }
+.index .messages .messages-container .message-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 .index .messages .messages-container .message-info p:first-child {
   font-size: 1.5rem;
   margin: 0.2rem 0;
@@ -117,6 +154,14 @@ header button {
 .index .messages .messages-container .message-info p:nth-child(3) {
   font-size: 0.7rem;
   margin: 0.8rem 0 0 0;
+}
+.index .messages .messages-container .message-info button {
+  background-color: burlywood;
+  border: none;
+  padding: 8px;
+  border-radius: 0.2rem;
+  margin: 0.5rem 0;
+  display: flex;
 }
 
 .form form {

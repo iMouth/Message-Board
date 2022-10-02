@@ -12,17 +12,28 @@
         <div class="messages-container">
           <div class="message-img">
             <!-- img from the images folder for message.user.avatar-->
-            <img src="images/<%= message.avatar %>" alt="" />
+            <img src="images/<%= message.avatar %>" alt="<%= message.avatar %>" />
           </div>
           <% if (user && user.member) { %>
           <div class="message-info">
             <p><%= message.text %></p>
             <p>by <%= message.user %></p>
             <p><%= message.added %></p>
+            <% if (user && user.admin) { %>
+            <form action="/messages/<%= message._id %>?_method=DELETE" method="POST">
+              <button type="submit">Delete</button>
+            </form>
+            <% } %>
+          </div>
+          <% } else if (user) { %>
+          <div class="message-info">
+            <p>Hidden Message! Become a Member! <br> Membership Password: cascade</p>
+            <p>by Unknown</p>
+            <p><%= message.added %></p>
           </div>
           <% } else { %>
           <div class="message-info">
-            <p>Hidden Message! Become a Member or Log in. <br> Membership Password: Put Password</p>
+            <p>Hidden Message! Sign up or Log in.</p>
             <p>by Unknown</p>
             <p><%= message.added %></p>
           </div>

@@ -1,6 +1,7 @@
 const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
 const User = require("../models/user");
+const { body, validationResult } = require("express-validator");
 
 const member_get = (req, res) => {
   res.render("member", { title: "Member", user: res.locals.currentUser });
@@ -27,7 +28,6 @@ const member_post = (req, res) => {
 const admin_post = (req, res) => {
   bcrypt.hash(req.body.password, 10, (err, hashedPassword) => {
     if (err) throw err;
-
     let collection = mongoose.connection.db.collection("users");
     let password = collection.findOne({ adminPass: hashedPassword });
     if (password) {

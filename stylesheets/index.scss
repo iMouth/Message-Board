@@ -29,6 +29,9 @@
         border-radius: 1rem;
       }
       .message-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         p:first-child {
           font-size: 1.5rem;
           margin: 0.2rem 0;
@@ -42,6 +45,15 @@
         p:nth-child(3) {
           font-size: 0.7rem;
           margin: 0.8rem 0 0 0;
+        }
+
+        button {
+          background-color: burlywood;
+          border: none;
+          padding: 8px;
+          border-radius: 0.2rem;
+          margin: 0.5rem 0;
+          display: flex;
         }
       }
     }
