@@ -5,10 +5,7 @@ require("dotenv").config();
 
 const start = () => {
   const uri = process.env.URI;
-  mongoose
-    .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log("Connected to Database"))
-    .catch((err) => createError(500));
+  mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }).catch((err) => createError(500));
 };
 
 module.exports = start;
