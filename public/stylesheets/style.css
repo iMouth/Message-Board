@@ -67,6 +67,7 @@ header .header-right a {
   padding: 1rem;
   text-decoration: none;
   color: white;
+  text-align: center;
 }
 header .header-right a:hover {
   cursor: pointer;
@@ -196,28 +197,24 @@ header button {
 #admin {
   background-size: cover;
   width: 100vw;
-  display: grid;
+  padding-bottom: 2rem;
+  display: flex;
   align-items: center;
   justify-items: center;
-}
-@media screen and (max-width: 600px) {
-  #log-in .form-container > img,
-#sign-up .form-container > img,
-#member .form-container > img,
-#admin .form-container > img {
-    height: 225px;
-  }
 }
 #log-in .form-container,
 #sign-up .form-container,
 #member .form-container,
 #admin .form-container {
-  margin-top: 2rem;
+  margin: 2rem auto;
   background-color: burlywood;
   padding: 25px 75px 50px 75px;
   border: 2px solid black;
   gap: 1rem;
   border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 @media screen and (max-width: 600px) {
   #log-in .form-container,
@@ -225,6 +222,14 @@ header button {
 #member .form-container,
 #admin .form-container {
     padding: 25px;
+  }
+}
+@media screen and (max-width: 850px) {
+  #log-in .form-container,
+#sign-up .form-container,
+#member .form-container,
+#admin .form-container {
+    width: 70%;
   }
 }
 #log-in .form-container h1,
@@ -238,18 +243,11 @@ header button {
 #sign-up .form-container img,
 #member .form-container img,
 #admin .form-container img {
-  width: auto;
-  height: 350px;
+  height: auto;
+  width: clamp(200px, 50vw, 400px);
   border-radius: 2rem;
   margin: 0 0 1rem 0;
-}
-@media screen and (max-width: 600px) {
-  #log-in .form-container img,
-#sign-up .form-container img,
-#member .form-container img,
-#admin .form-container img {
-    height: 225px;
-  }
+  align-self: center;
 }
 #log-in .form-container label,
 #sign-up .form-container label,
@@ -273,7 +271,6 @@ header button {
   outline: none;
   margin: 2px 0 1rem 0;
   border-radius: 2rem;
-  min-width: 250px;
 }
 #log-in .form-container .form-group > p,
 #sign-up .form-container .form-group > p,
@@ -295,6 +292,8 @@ header button {
   border-radius: 2rem;
   padding: 0.5rem;
   width: calc(100% - 15px);
+  flex-wrap: wrap;
+  justify-content: center;
 }
 #log-in .form-container .characters-container .character input,
 #sign-up .form-container .characters-container .character input,
@@ -309,8 +308,8 @@ header button {
 #admin .form-container .characters-container .character label > img {
   margin: 0;
   border-radius: 10rem;
-  height: 100px;
-  width: auto;
+  height: auto;
+  width: 100px;
   border: 5px solid transparent;
   cursor: pointer;
 }
