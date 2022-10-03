@@ -7,6 +7,7 @@ const index_get = (req, res) => {
   collection.find({}).toArray((err, result) => {
     if (err) throw err;
     result.forEach((message) => messages.push(message));
+    messages.reverse();
     if (res.locals.currentUser) {
       res.render("index", { title: "Home", messages, user: res.locals.currentUser });
     } else {
