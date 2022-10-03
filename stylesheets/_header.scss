@@ -6,6 +6,7 @@ header {
   color: white;
   font: 1rem monospace;
   gap: 1rem;
+  align-items: center;
 
   .header-left {
     display: flex;
@@ -32,6 +33,8 @@ header {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
+    padding: 1rem 0;
+    justify-content: center;
 
     p {
       margin: 0;

@@ -26,6 +26,7 @@ header {
   color: white;
   font: 1rem monospace;
   gap: 1rem;
+  align-items: center;
 }
 header .header-left {
   display: flex;
@@ -49,6 +50,8 @@ header .name {
   display: flex;
   align-items: center;
   font-size: 1.5rem;
+  padding: 1rem 0;
+  justify-content: center;
 }
 header .name p {
   margin: 0;
@@ -107,6 +110,11 @@ header button {
   min-width: 10.5rem;
 }
 
+@media screen and (max-width: 1100px) {
+  .index .header-left {
+    display: none;
+  }
+}
 .index .messages {
   display: flex;
   flex-direction: column;
@@ -129,7 +137,7 @@ header button {
   align-items: center;
 }
 .index .messages .messages-container .message-img > img {
-  width: clamp(100px, 8vw, 200px);
+  width: clamp(100px, 20vw, 150px);
   height: auto;
   border-radius: 1rem;
 }

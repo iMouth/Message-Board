@@ -1,6 +1,12 @@
 .index {
   @extend %page-setup;
 
+  @media screen and (max-width: 1100px) {
+    .header-left {
+      display: none;
+    }
+  }
+
   .messages {
     display: flex;
     flex-direction: column;
@@ -24,7 +30,7 @@
       }
 
       .message-img > img {
-        width: clamp(100px, 8vw, 200px);
+        width: clamp(100px, 20vw, 150px);
         height: auto;
         border-radius: 1rem;
       }
