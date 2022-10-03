@@ -30,20 +30,12 @@ app.use(express.static(path.join(__dirname, "public")));
 passport.use(
   new LocalStrategy({ usernameField: "email" }, (email, password, done) => {
     User.findOne({ email: email }, (err, user) => {
-      if (err) {
-        return done(err);
-      }
-      if (!user) {
-        return done(null, false, { message: "Incorrect Username" });
-      }
+      if (err) return done(err);
+      if (!user) return done(null, false, { message: "Incorrect Username" });
       bcrypt.compare(password, user.password, (err, res) => {
-        if (err) {
-          return done(err);
-        } else if (res) {
-          return done(null, user);
-        } else {
-          return done(null, false, { message: "Incorrect password" });
-        }
+        if (err) return done(err);
+        else if (res) return done(null, user);
+        else return done(null, false, { message: "Incorrect password" });
       });
     });
   })
@@ -52,7 +44,7 @@ passport.use(
 passport.serializeUser((user, done) => done(null, user.id));
 passport.deserializeUser((id, done) => User.findById(id, (err, user) => done(err, user)));
 
-app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true }));
+app.use(session({ secret: process.env.SESSION_SECRET || "skaksjnd22e", resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.urlencoded({ extended: false }));
@@ -84,7 +76,9 @@ app.use((err, req, res, next) => {
   res.render("error");
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log("Listening on " + port));
+if (process.env.STATUS == "dev") {
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => console.log("Listening on " + port));
+}
 
 module.exports = app;

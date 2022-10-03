@@ -13,8 +13,12 @@
     <div class="header-btns">
       <a href="/new"><button type="button">Create Message</button></a>
       <div>
+        <% if (!(user && user.member)) { %>
         <a href="/member">Member</a>
+        <% } %>
+        <% if (!(user && user.admin)) { %>
         <a href="/admin">Admin</a>
+        <% } %>
         <a href="/log-out">Log Out</a>
       </div>
     </div>
