@@ -5,6 +5,7 @@ header {
   background-color: rgb(51, 51, 51);
   color: white;
   font: 1rem monospace;
+  gap: 1rem;
 
   .header-left {
     display: flex;
@@ -17,16 +18,13 @@ header {
     }
     h1 {
       font-size: 1.5rem;
+      text-align: center;
     }
 
     img {
       margin: auto;
       width: auto;
       height: 40px;
-    }
-
-    @media screen and (max-width: 1100px) {
-      display: none;
     }
   }
 
@@ -36,7 +34,8 @@ header {
     font-size: 1.5rem;
 
     p {
-      margin: 1rem 0;
+      margin: 0;
+      text-align: center;
     }
   }
 
@@ -48,14 +47,10 @@ header {
     .header-btns {
       display: flex;
       align-items: center;
-
-      @media screen and (max-width: 550px) {
-        flex-direction: column;
-      }
     }
 
     a {
-      padding: 0 1rem;
+      padding: 1rem;
       text-decoration: none;
       color: white;
     }
@@ -74,24 +69,26 @@ header {
       gap: 0.5rem;
       align-items: center;
     }
+  }
 
-    @media screen and (max-width: 800px) {
-      .header-btns > div {
-        flex-direction: column;
-        margin: 0.5rem 0;
-      }
-    }
-
-    @media screen and (max-width: 550px) {
-      .header-btns > div {
-        flex-direction: row;
-      }
+  @media screen and (max-width: 800px) {
+    .header-btns {
+      flex-direction: column;
+      margin: 0.5rem 0;
     }
   }
 
   @media screen and (max-width: 550px) {
     flex-direction: column;
     align-items: center;
+
+    .header-btns {
+      flex-direction: column;
+    }
+
+    .header-btns > div {
+      flex-direction: row;
+    }
   }
 
   button {

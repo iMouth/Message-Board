@@ -14,6 +14,12 @@ $font-face: "monospace";
   align-items: center;
   justify-items: center;
 
+  @media screen and (max-width: 600px) {
+    .form-container > img {
+      height: 225px;
+    }
+  }
+
   .form-container {
     margin-top: 2rem;
     background-color: burlywood;
@@ -21,6 +27,10 @@ $font-face: "monospace";
     border: 2px solid black;
     gap: 1rem;
     border-radius: 2rem;
+
+    @media screen and (max-width: 600px) {
+      padding: 25px;
+    }
 
     h1 {
       display: flex;
@@ -32,13 +42,17 @@ $font-face: "monospace";
       height: 350px;
       border-radius: 2rem;
       margin: 0 0 1rem 0;
+
+      @media screen and (max-width: 600px) {
+        height: 225px;
+      }
     }
 
     label {
       font-family: $font-face;
       padding-left: 10px;
     }
-    
+
     input {
       display: block;
       width: calc(100% - 10px);
