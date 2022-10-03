@@ -12,30 +12,34 @@ const admin_get = (req, res) => {
 };
 
 const member_post = (req, res) => {
-  bcrypt.hash(req.body.password, 10, (err, hashedPassword) => {
-    if (err) throw err;
-    let collection = mongoose.connection.db.collection("users");
-    let password = collection.findOne({ memberPass: hashedPassword });
-    if (password) {
-      User.findOneAndUpdate({ email: res.locals.currentUser.email }, { member: true }, (err, user) => {
-        if (err) throw err;
-        res.redirect("/");
-      });
-    }
+  let admin = mongoose.connection.db.collection("admin");
+  let password = admin.findOne({ memberPass: { $exists: true } }).then((result) => {
+    bcrypt.compare(req.body.password, result.memberPass, (err, result) => {
+      if (result) {
+        User.findOneAndUpdate({ _id: res.locals.currentUser._id }, { member: true }, (err, result) => {
+          if (err) throw err;
+          res.redirect("/");
+        });
+      } else {
+        res.redirect("/member");
+      }
+    });
   });
 };
 
 const admin_post = (req, res) => {
-  bcrypt.hash(req.body.password, 10, (err, hashedPassword) => {
-    if (err) throw err;
-    let collection = mongoose.connection.db.collection("users");
-    let password = collection.findOne({ adminPass: hashedPassword });
-    if (password) {
-      User.findOneAndUpdate({ email: res.locals.currentUser.email }, { admin: true }, (err, user) => {
-        if (err) throw err;
-        res.redirect("/");
-      });
-    }
+  let admin = mongoose.connection.db.collection("admin");
+  let password = admin.findOne({ adminPass: { $exists: true } }).then((result) => {
+    bcrypt.compare(req.body.password, result.adminPass, (err, result) => {
+      if (result) {
+        User.findOneAndUpdate({ _id: res.locals.currentUser._id }, { admin: true }, (err, result) => {
+          if (err) throw err;
+          res.redirect("/");
+        });
+      } else {
+        res.redirect("/admin");
+      }
+    });
   });
 };
 

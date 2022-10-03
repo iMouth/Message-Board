@@ -2,7 +2,7 @@ const { messages, makeDate } = require("../modules/messages");
 const Message = require("../models/message");
 
 const new_create_get = (req, res) => {
-  if (!(res.locals.currentUser || res.locals.currentUser.member == true || res.locals.currentUser.admin == true)) {
+  if (!(res.locals.currentUser && (res.locals.currentUser.member == true || res.locals.currentUser.admin == true))) {
     res.redirect("/");
   } else {
     res.render("form", { title: "New Message", user: res.locals.currentUser });
