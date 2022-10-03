@@ -115,6 +115,7 @@ $font-face: "monospace";
       width: 100%;
       font-size: $font-size;
       font-family: $font-face;
+      color: black;
 
       &:hover {
         background-color: $form-bg-secondary;

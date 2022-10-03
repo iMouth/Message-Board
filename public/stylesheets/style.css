@@ -150,6 +150,17 @@ header button {
   font-size: 0.7rem;
   margin: 0.8rem 0 0 0;
 }
+@media screen and (max-width: 550px) {
+  .index .messages .messages-container .message-info p:first-child {
+    font-size: 1rem;
+  }
+  .index .messages .messages-container .message-info p:nth-child(2) {
+    font-size: 0.7rem;
+  }
+  .index .messages .messages-container .message-info p:nth-child(3) {
+    font-size: 0.5rem;
+  }
+}
 .index .messages .messages-container .message-info button {
   background-color: burlywood;
   border: none;
@@ -333,6 +344,7 @@ header button {
   width: 100%;
   font-size: 1rem;
   font-family: "monospace";
+  color: black;
 }
 #log-in .form-container button:hover,
 #sign-up .form-container button:hover,

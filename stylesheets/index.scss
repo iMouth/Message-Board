@@ -47,6 +47,20 @@
           margin: 0.8rem 0 0 0;
         }
 
+        @media screen and (max-width: 550px) {
+          p:first-child {
+            font-size: 1rem;
+          }
+
+          p:nth-child(2) {
+            font-size: 0.7rem;
+          }
+
+          p:nth-child(3) {
+            font-size: 0.5rem;
+          }
+        }
+
         button {
           background-color: burlywood;
           border: none;
